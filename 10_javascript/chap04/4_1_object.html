@@ -40,21 +40,54 @@
     document.write('<h1>tv 객체 메서드 호출</h1>');
     tv.info();
 
+    // 2) 리터럴 방식을 이용
+    const car = {
+      // 객체의 속성 = 키: 밸류
+      color: 'black',
+      price: 50000000,
+      info: function () { // info 함수 등록 => 메소드
+        document.write('car 색상: ' + this.color, '<br>'); // this: 객체 자기 자신을 가리킴
+        document.write('car 가격: ' + this.price, '<br>');
+      }
+    };
+    document.write('<h1>car 객체 메서드 호출</h1>');
+    car.info();
 
+    // 객체 속성 추가, 수정, 삭제
+    car.company = 'Hyundai'; // company 속성 추가
+    document.write(`제조사: ${car.company}<br>`);
+    car.company = 'Kia'; // company 속성 수정
+    document.write(`제조사: ${car.company}<br>`);
+    delete car.company; // company 속성 삭제
+    document.write(`제조사: ${car.company}<br>`);
 
+    // 대괄호 표기법으로 속성 값 얻기
+    document.write('<h1>대괄호 표기법</h1>');
+    const user = {
+      name: 'John',
+      age: 30
+    };
 
+    document.write(`name: ${user.name}<br>`);
+    document.write(`age: ${user['age']}<br>`); // 변수나 복잡한 표현식 사용 가능
 
+    // 키 값을 변수로 받아 접근하기
+    // const key = prompt('사용자의 어떤 정보를 얻고 싶으신가요?', 'name');
+    // document.write(user[key]);
 
+    // (참고) const 객체?
+    const testUser = {
+      name: 'goni'
+    };
 
+    // 아래 코드는 문제가 없을까요?
+    testUser.name = 'peter';
 
-
-
-
-
-
-
-
-
+    // const는 한번이라도 값을 할당한 변수가 변경되는 걸 막음
+    // 변수 testUser는 객체 참조 값을 저장하고 있는데,
+    // const는 이 값이 변경되는걸 막는 것이지,
+    // 객체의 내용(속성)을 변경하는건 막지 않음
+    testUser = 123; // error
   </script>
 </head>
 <body>
