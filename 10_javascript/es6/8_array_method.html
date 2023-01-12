@@ -139,8 +139,18 @@
     console.log(foundIndex); // 1
     console.log(greetings.findIndex(e => e === 'hey')); // -1
 
+    // Array.some()과 Array.every()
+    // .some()은 조건과 일치하는 요소가 있는지 검색하고 첫번째 일치하는 요소를 찾으면 바로 중지
+    // .every()는 모든 요소가 주어진 조건과 일치하는지 여부를 확인
+    // 원래 배열을 변경하지 않음
+    const numArray = [1, 2, 3, 4, 5, 6, 1, 2, 3, 1];
 
+    const arraySome = numArray.some(e => e > 2); // 일부
+    console.log(arraySome);
 
+    const arrayEvery = numArray.every(e => e > 2); // 모든
+    console.log(arrayEvery);
+    console.log(numArray.every(e => e >= 1));
   </script>
 </body>
 </html>
