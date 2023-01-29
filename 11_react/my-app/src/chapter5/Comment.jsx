@@ -34,21 +34,16 @@ const styles = {
 // https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png
 
 function Comment(props) {
-  console.log(props);
-
   return (
     <div style={styles.wrapper}>
       {/* 사람 모양의 프로필 이미지 */}
       <div style={styles.imageContainer}>
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" 
-          style={styles.image}
-        />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+        style={styles.image} />
       </div>
-
       {/* 댓글 작성자와 내용 */}
       <div style={styles.contentContainer}>
-        {/* 작성자와 내용을 props를 써서 동적으로 변경하게끔 추가(key값은 name과 comment로 전달할 예정) */}
+        {/* 작성자와 내용을 props를 써서 동적으로 변경하게끔 추가(key 값은 name과 comment로 전달할 예정)  */}
         <span style={styles.nameText}>{props.name}</span>
         <span style={styles.commentText}>{props.comment}</span>
       </div>
